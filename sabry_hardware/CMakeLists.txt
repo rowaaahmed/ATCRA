@@ -84,19 +84,10 @@ ament_export_dependencies(
 # ament_python_install_package(scripts)
 install(PROGRAMS
   scripts/linear_motor_node.py
-  scripts/add_two_ints_server.py
   scripts/tool_change_manager.py
-  scripts/chat.py
   scripts/operation.py
-  scripts/trajectory_joints.py
-  scripts/bridge_trajectory.py
-  scripts/trajectory_controller.py
-  scripts/screw_detection.py
-  scripts/camera_stream.py
   scripts/camera_stream.py
   scripts/lifecycle_manager.py
-  scripts/inspection.py
-  # scripts/inspection_v2.py
   scripts/inspection_v3.py
   DESTINATION lib/${PROJECT_NAME}
 )
