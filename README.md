@@ -64,7 +64,6 @@ To test with simulated results instead of real hardware:
    ```bash
    ros2 topic pub /workpiece_coordinates geometry_msgs/msg/Point "{x: 0.1, y: 0.1, z: 0.33}" --once
    ```
-   Replace `<msg_type>` and `<data>` with the actual message type and field values expected by the `/workpiece_coordinates` topic.
 
 ## Summary
 
