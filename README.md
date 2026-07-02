@@ -20,7 +20,7 @@ The MoveIt configuration package used for **simulated results**. It brings up Mo
 The MoveIt configuration package used for the **hardware connection**. It brings up MoveIt configured to talk to the real robot through `sabry_hardware`, and is the entry point for running the full system on physical hardware.
 
 ## Prerequisites
-- ROS 2 (matching the distro this workspace targets)
+- ROS 2 Humble
 - MoveIt 2
 - A working `colcon` workspace with this repo cloned into `src/`
 
