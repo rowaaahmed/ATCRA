@@ -201,7 +201,7 @@ void SabrySystem::read_serial_encoders()
     while (delta > 180.0)  delta -= 360.0;
     while (delta < -180.0) delta += 360.0;
 
-    // 🔴 REJECT unrealistic jumps (tune this)
+    // REJECT unrealistic jumps 
     double max_delta = 70.0;  // deg per cycle (adjust based on your speed)
 
     if (std::fabs(delta) > max_delta)
@@ -254,33 +254,6 @@ void SabrySystem::read_serial_encoders()
 }
 
 // ===================== READ =====================
-// hardware_interface::return_type SabrySystem::read(
-//   const rclcpp::Time &,
-//   const rclcpp::Duration &)
-// {
-//   read_serial_encoders();
-
-//   RCLCPP_DEBUG_THROTTLE(
-//     rclcpp::get_logger("SabrySystem"), clock_, 2000,
-//     "read() running");
-
-//   rclcpp::Time current_time = clock_.now();
-
-//   double dt = (current_time - prev_read_time_).seconds();
-//   if (dt <= 0.0) dt = 1e-6;
-
-//   for (size_t i = 0; i < hw_positions_.size(); i++)
-//   {
-//     hw_velocities_[i] =
-//       (hw_positions_[i] - prev_positions_[i]) / dt;
-
-//     prev_positions_[i] = hw_positions_[i];
-//   }
-
-//   prev_read_time_ = current_time;
-
-//   return hardware_interface::return_type::OK;
-// }
 hardware_interface::return_type SabrySystem::read(
   const rclcpp::Time &,
   const rclcpp::Duration &)
@@ -548,11 +521,6 @@ SabrySystem::export_state_interfaces()
 
   }
 
-  // out.emplace_back(
-  //   "left_tool_joint",
-  //   hardware_interface::HW_IF_POSITION,
-  //   &gripper_position_);
-
   return out;
 }
 
@@ -577,10 +545,6 @@ SabrySystem::export_command_interfaces()
     }
   }
 
-  // out.emplace_back(
-  //   "left_tool_joint",
-  //   hardware_interface::HW_IF_POSITION,
-  //   &gripper_command_);
 
   return out;
 }
