@@ -62,7 +62,7 @@ To test with simulated results instead of real hardware:
    ```
 3. **Publish workpiece coordinates manually** — since there's no camera running in simulation, publish the coordinates by hand to drive the pipeline:
    ```bash
-   ros2 topic pub /workpiece_coordinates geometry_msgs/msg/Point "{x: 0.1, y: 0.1, z: 0.33}" --once
+   ros2 topic pub /workpiece_coordinates geometry_msgs/msg/Point "{x: 0.1, y: 0.1, z: 0.35}" --once
    ```
 
 ## Summary
